@@ -255,7 +255,7 @@ public class DartClientCodegen extends DefaultCodegen implements CodegenConfig {
 
         // camelize the model name
         // phone_number => PhoneNumber
-        return camelize(name);
+        return camelize(sanitizeName(name));
     }
 
     @Override
