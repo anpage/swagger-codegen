@@ -275,7 +275,8 @@ public class DartClientCodegen extends DefaultCodegen implements CodegenConfig {
         } else if (p instanceof ArrayProperty) {
             return "[]";
         }
-        return super.toDefaultValue(p);
+        String defaultValue = super.toDefaultValue(p);
+        return defaultValue == "null" ? null : defaultValue;
     }
 
     @Override
